@@ -3559,10 +3559,12 @@ p>object:only-child{
 	
 
 	.site-header .menu-scroll-down{
-		display:block;
+		display:inline-block;
 		padding:1em;
 		position:absolute;
-		right:0;
+ left:50%;
+ transform:translateX(-50%);
+
 	}
 
 	.site-header .menu-scroll-down .icon{
@@ -3585,10 +3587,28 @@ p>object:only-child{
 		outline:thin dotted;
 	}
 
+@keyframes bounce{
+ 0%,20%,50%,80%,100%{
+ transform:rotate(90deg) translateX(0);
+}
+ 40%{
+ transform:rotate(90deg) translateX(-10px);
+}
+ 60%{
+ transform:rotate(90deg) translateX(-5px);
+}
+}
+
+
 	.menu-scroll-down .icon{
-		height:18px;
-		width:18px;
+		height:72px;
+		width:72px;
+ animation:bounce 2s infinite;
 	}
+
+ .menu-scroll-down:hover .icon{
+ animation-play-state:paused;
+}
 
 	
 
